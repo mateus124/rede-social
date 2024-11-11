@@ -1,0 +1,19 @@
+{
+  "name": "rede-social",
+  "version": "1.0.0",
+  "description": "Api rede social",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "Mateus124",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "sequelize": "^6.37.5"
+  }
+}
