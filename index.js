@@ -17,3 +17,5 @@ sequelize
   .catch((error) => {
     console.error("Erro ao sincronizar tabelas:", error);
   });
+
+require("./src/routes/apiRoutes");

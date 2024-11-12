@@ -28,3 +28,5 @@ const User = database.define("User", {
     type: sequelize.ARRAY,
   },
 });
+
+module.exports = User;
