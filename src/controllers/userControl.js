@@ -9,14 +9,15 @@ const createUser = async (userData) => {
       description: description,
       age: age,
       followers: 0,
-      follow: [0],
+      follow: [],
     });
-
     return user;
   } catch (error) {
-    throw new Error("Usuário não cadastrado: ", error.message);
+    throw new Error("Usuário não cadastrado: ", error);
   }
 };
+
+const updateUser = async (newData) => {};
 
 module.exports = {
   createUser,

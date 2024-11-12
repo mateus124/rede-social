@@ -1,4 +1,6 @@
+const express = require("express");
 const sequelize = require("./src/database/connect");
+const routes = require("./src/routes/apiRoutes");
 
 sequelize
   .authenticate()
@@ -10,7 +12,7 @@ sequelize
   });
 
 sequelize
-  .sync({ force: false })
+  .sync({ force: true })
   .then(() => {
     console.log("Tabelas sincronizadas.");
   })
@@ -18,4 +20,12 @@ sequelize
     console.error("Erro ao sincronizar tabelas:", error);
   });
 
-require("./src/routes/apiRoutes");
+const port = 8080;
+const app = express();
+
+app.use(express.json());
+app.use("/api", routes);
+
+app.listen(port, () => {
+  console.log("Rodando com express na porta: ", port);
+});
